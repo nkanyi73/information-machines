@@ -16,6 +16,12 @@ public class UIUpdateManager : MonoBehaviour
     public TMP_Dropdown orderQuantityDropdown;
     public TMP_Dropdown partNumberDropdown;
 
+    [Header("Machine 9")]
+    public TMP_Text actualPressure;
+    public TMP_Text actualForce;
+    public TMP_Text setPointPressure;
+    public TMP_Text setPointForce;
+
     // Method to update connection status images based on OPC UA interface connection
     public void UpdateConnectionImages(int interfaceToRead)
     {

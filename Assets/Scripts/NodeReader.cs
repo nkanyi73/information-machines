@@ -8,6 +8,7 @@ public class NodeReader : MonoBehaviour
     [Header("Factory Machine")]
     public int factoryMachineID;
     public OPCUA_Interface oPCUAinterface;
+    public bool hasNodeChanged;
 
     [Header("OPCUA Reader")]
     public string nodeBeingMonitored;
@@ -54,7 +55,16 @@ public class NodeReader : MonoBehaviour
     // Method called when the monitored node changes its value
     public void NodeChanged(OPCUANodeSubscription sub, object value)
     {
-        dataFromOPCUANode = value.ToString();
+        try
+        {
+            dataFromOPCUANode = value.ToString();
+            hasNodeChanged = true;
+
+        } catch
+        {
+            Debug.Log("Data from OPC Node is not parsable to string");
+        }
+        
         Debug.Log(value);
         uiUpdateManager.UpdateDataFromNodeTMP(factoryMachineID - 1, nodeBeingMonitored);
     }

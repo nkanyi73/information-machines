@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UIUpdateManager
+  - Can
+  - g4a sun
+  - g4a secondlight
+  - g4a firstlight
+  - CurrentOrder
+  - Finished Orders
   layers:
   - Default
   - TransparentFX

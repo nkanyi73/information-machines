@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-4.3798 -1.1162 -11.4326 4.5669 1.5753 -2.8340" area="36" targetId="edee707d34da45b6badc78a2f42c412a" name="Nick_ScanLab_authoring_target" pathAuthoring="edee707d34da45b6badc78a2f42c412a_authoring.glb" pathOcclusion="edee707d34da45b6badc78a2f42c412a_occlusion.3dt" pathNavMesh="edee707d34da45b6badc78a2f42c412a_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

@@ -10,9 +10,10 @@ public class CurrentOrders : MonoBehaviour
 
     public CurrentOrderJSON[] currentOrdersObjectArray;
 
-    public string listInfo;
+    public string url;
+    //public string listInfo;
 
-    public TMP_Text currentOrdersInfo;
+    //public TMP_Text currentOrdersInfo;
 
     // Method to receive data from the server and update UI
     public void ReceieveData(string CurrentOrderStringPHPMany)
@@ -26,7 +27,7 @@ public class CurrentOrders : MonoBehaviour
         currentOrdersObjectArray = JsonHelper.FromJson<CurrentOrderJSON>(newCurrentOrderStringPHPMany);
 
         CurrentOrderData.Clear();
-        listInfo = "";
+        //listInfo = "";
 
         // Iterate through the array, log each order, and add to the list
         for (int i = 0; i < currentOrdersObjectArray.Length; i++)
@@ -37,13 +38,13 @@ public class CurrentOrders : MonoBehaviour
         }
 
         // Concatenate the list items into a string with new lines
-        foreach (var listMember in CurrentOrderData)
-        {
-            listInfo += listMember.ToString() + "\n" + "\n";
-        }
+        //foreach (var listMember in CurrentOrderData)
+        //{
+        //    listInfo += listMember.ToString() + "\n" + "\n";
+        //}
 
-        // Update the UI text field
-        currentOrdersInfo.text = listInfo;
+        //// Update the UI text field
+        //currentOrdersInfo.text = listInfo;
     }
 
     // Ensure JSON format compatibility
@@ -56,7 +57,7 @@ public class CurrentOrders : MonoBehaviour
     // Coroutine to make a GET request to the server
     public void GetCurrentOrders()
     {
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));     //calls coroutine and sets string
+        StartCoroutine(GetRequest(url));     //calls coroutine and sets string
     }
 
     // Coroutine to handle the GET request and update UI based on response
